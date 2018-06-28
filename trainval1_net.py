@@ -63,7 +63,7 @@ def parse_args():
   parser.add_argument('--nw', dest='num_workers',
                       help='number of worker to load data',
                       default=1, type=int)
-  parser.add_argument('--cuda', dest='cuda', default=True
+  parser.add_argument('--cuda', dest='cuda', default=True,
                       help='whether use CUDA',
                       action='store_true')
   parser.add_argument('--ls', dest='large_scale',

@@ -100,16 +100,10 @@ class WiderPedestrian(imdb):
     """
     Construct an image path from the image's "index" identifier.
     """
-    # Example image path for index=93 in voc 2007:
-    #   images/JPEGImages/000093.jpg index > 999999 for voc 2012
-    if index <= 999999:
-      file_name = (str(index).zfill(6) + '.jpg')
-      image_path = osp.join(self._data_path, 'JPEGImages',file_name)
-    # Example image path for index=93 in voc 2012 for an image of 2008:
-    #   images/JPEGImages/2008_000093.jpg
-    else:
-      file_name = (str(index)[0:4] + '_' + str(index)[4:] + '.jpg')
-      image_path = osp.join(self._data_path, 'JPEGImages',file_name)
+    # Example image path for index=93:
+    #   images/JPEGImages/img00093.jpg 
+    file_name = ('img'+str(index).zfill(5) + '.jpg')
+    image_path = osp.join(self._data_path, 'JPEGImages',file_name)
     assert osp.exists(image_path), \
       'Path does not exist: {}'.format(image_path)
     return image_path

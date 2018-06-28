@@ -58,12 +58,7 @@ class WiderPedestrian(imdb):
     self._data_name = voc_name
     # Dataset splits that have ground-truth annotations (test splits
     # do not have gt annotations)
-    if self.name[-4:]!='test':
-      self.image_label_file = osp.join(self._data_path, 'annotations',
-                    'label_'+self.name+'.json')
-      self.image_label = json.load(open(self.image_label_file, 'r'))
-    else:
-      self.image_label = None
+    self.image_label = None
 
 
   def _get_default_path(self):

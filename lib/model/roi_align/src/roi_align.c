@@ -85,7 +85,8 @@ void ROIAlignForwardCpu(const float* bottom_data, const float spatial_scale, con
     const int output_size = num_rois * aligned_height * aligned_width * channels;
 
     #pragma omp parallel for 
-    for (int idx = 0; idx < output_size; ++idx)
+    int idx = 0;
+    for (idx = 0; idx < output_size; ++idx)
     {
         // (n, c, ph, pw) is an element in the aligned output
         int pw = idx % aligned_width;
@@ -143,7 +144,8 @@ void ROIAlignBackwardCpu(const float* top_diff, const float spatial_scale, const
     const int output_size = num_rois * aligned_height * aligned_width * channels;
 
     #pragma omp parallel for 
-    for (int idx = 0; idx < output_size; ++idx)
+    int idx = 0;
+    for (idx = 0; idx < output_size; ++idx)
     {
         // (n, c, ph, pw) is an element in the aligned output
         int pw = idx % aligned_width;

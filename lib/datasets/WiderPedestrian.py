@@ -308,7 +308,6 @@ class WiderPedestrian(imdb):
   def evaluate_detections(self, all_boxes, output_dir):
     res_file = osp.join(output_dir, ('detections_' +
                                      self._image_set +
-                                     self._year +
                                      '_results'))
     if self.config['use_salt']:
       res_file += '_{}'.format(str(uuid.uuid4()))

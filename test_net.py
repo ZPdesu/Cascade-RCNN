@@ -270,7 +270,7 @@ if __name__ == '__main__':
           # Simply repeat the boxes, once for each class
           pred_boxes = np.tile(boxes, (1, scores.shape[1]))
 
-      pred_boxes /= data[1][0][2]
+      pred_boxes /= data[1][0][2].cuda()
 
       scores = scores.squeeze()
       pred_boxes = pred_boxes.squeeze()

@@ -70,12 +70,12 @@ class WiderPedestrian(imdb):
     """
     Return the default path where PASCAL VOC is expected to be installed.
     """
-    return os.path.join(cfg.DATA_DIR, 'VOCdevkit' + self._year)
+    return os.path.join(cfg.DATA_DIR, 'WiderPedestrian' + self._year)
 
   def _get_ann_file(self):
     prefix = 'WiderPedestrian'
     return osp.join(self._data_path, self._ann_path,
-                    prefix + '_' + self._year + '_' + self._image_set + '_f.json')
+                    prefix + '_' + self._image_set + '.json')
 
   def _load_image_set_index(self):
     """

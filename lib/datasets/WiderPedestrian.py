@@ -54,7 +54,7 @@ class WiderPedestrian(imdb):
     # Some image sets are "views" (i.e. subsets) into others.
     # For example, minival2014 is a random 5000 image subset of val2014.
     # This mapping tells us where the view's images and proposals come from.
-    voc_name = image_set + year  # e.g., "val2014"
+    voc_name = image_set # e.g., "val"
     self._data_name = voc_name
     # Dataset splits that have ground-truth annotations (test splits
     # do not have gt annotations)

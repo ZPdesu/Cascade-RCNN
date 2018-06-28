@@ -38,7 +38,7 @@ class WiderPedestrian(imdb):
       else devkit_path
     self._use_cache = True if ann_path is None else False
     self._ann_path = ann_path if ann_path is not None else 'annotations'
-    self._data_path = os.path.join(self._devkit_path, 'data')
+    self._data_path = os.path.join(self._devkit_path)
     # load COCO API, classes, class <-> id mappings
     self._COCO = COCO(self._get_ann_file())
     cats = self._COCO.loadCats(self._COCO.getCatIds())

@@ -70,7 +70,7 @@ class WiderPedestrian(imdb):
     """
     Return the default path where PASCAL VOC is expected to be installed.
     """
-    return os.path.join(cfg.DATA_DIR, 'WiderPedestrian' + self._year)
+    return os.path.join(cfg.DATA_DIR, 'WiderPedestrian')
 
   def _get_ann_file(self):
     prefix = 'WiderPedestrian'

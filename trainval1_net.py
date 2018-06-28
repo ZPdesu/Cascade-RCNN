@@ -40,7 +40,7 @@ def parse_args():
   parser = argparse.ArgumentParser(description='Train a Fast R-CNN network')
   parser.add_argument('--dataset', dest='dataset',
                       help='training dataset',
-                      default='WiderPedestrian', type=str)
+                      default='pascal_voc', type=str)
   parser.add_argument('--net', dest='net',
                     help='vgg16, res101',
                     default='vgg16', type=str)
@@ -58,12 +58,12 @@ def parse_args():
                       default=10000, type=int)
 
   parser.add_argument('--save_dir', dest='save_dir',
-                      help='directory to save models', default="/srv/share/jyang375/models",
+                      help='directory to save models', default="saved_models",
                       type=str)
   parser.add_argument('--nw', dest='num_workers',
                       help='number of worker to load data',
-                      default=0, type=int)
-  parser.add_argument('--cuda', dest='cuda',
+                      default=1, type=int)
+  parser.add_argument('--cuda', dest='cuda', default=True
                       help='whether use CUDA',
                       action='store_true')
   parser.add_argument('--ls', dest='large_scale',

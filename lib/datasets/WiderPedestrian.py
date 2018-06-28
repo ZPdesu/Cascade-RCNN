@@ -25,12 +25,13 @@ from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as COCOmask
 
 class WiderPedestrian(imdb):
-  def __init__(self, image_set, year, devkit_path=None, ann_path=None):
-    imdb.__init__(self, 'WiderPedestrian_' + year + '_' + image_set)
+  def __init__(self, image_set, devkit_path=None, ann_path=None):
+    imdb.__init__(self, 'WiderPedestrian_' + image_set)
     # COCO specific config options
     self.config = {'use_salt': True,
                    'cleanup': True}
     # name, paths
+    year = 2018
     self._year = year
     self._image_set = image_set
     self._devkit_path = self._get_default_path() if devkit_path is None \
